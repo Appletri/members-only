@@ -1,0 +1,17 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    title
+  body
+    if user
+      h1 Welcome back #{user.username}
+      a(href='/log-out') Log out
+    else
+      h1 Please log in
+      form(action='/log-in' method='POST')
+        label(for='username') Username
+        input(name='username' placeholder='username' type='text')
+        label(for='password') Password
+        input(name='password' type='password')
+        button Log In
